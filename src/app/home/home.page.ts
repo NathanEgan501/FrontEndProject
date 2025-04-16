@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
+import { IonicModule } from '@ionic/angular';  // Only IonicModule is necessary
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent],
+  imports: [IonicModule, CommonModule, RouterModule],  // Only include IonicModule here
 })
 export class HomePage {
   constructor() {}
