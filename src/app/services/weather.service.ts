@@ -11,9 +11,15 @@ export class WeatherService {
 
   constructor(private http: HttpClient) { }
 
+  // Fetch weather based on city name
+  getWeatherByCity(city: string): Observable<any> {
+    const url = `${this.apiUrl}?q=${city}&appid=${this.apiKey}&units=metric`;
+    return this.http.get<any>(url);
+  }
+
+  // Fetch weather based on latitude and longitude
   getWeatherByLocation(lat: number, lon: number): Observable<any> {
     const url = `${this.apiUrl}?lat=${lat}&lon=${lon}&appid=${this.apiKey}&units=metric`;
     return this.http.get<any>(url);
   }
-  
 }

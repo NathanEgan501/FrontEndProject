@@ -4,15 +4,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>{{ forecast.city }}</ion-card-title>
-      <ion-card-subtitle>{{ forecast.condition }}</ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      <p>Temperature: {{ forecast.temperature }}°C</p>
-      <ion-button expand="full" color="tertiary" routerLink="/home">Go Back</ion-button>
-    </ion-card-content>
-  </ion-card>
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Enter City</ion-label>
+    <ion-input [(ngModel)]="city" type="text"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="getWeather()">Search City</ion-button>
+  <ion-button expand="full" color="medium" (click)="getWeatherByLocation()">Use My Location</ion-button>
+
+  <div *ngIf="weatherData" class="weather-info">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ weatherData.name }}</ion-card-title>
+        <ion-card-subtitle>{{ weatherData.weather[0].description }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Temperature: {{ weatherData.main.temp }}°C</p>
+        <p>Humidity: {{ weatherData.main.humidity }}%</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-button expand="full" color="tertiary" routerLink="/home">Back</ion-button>
+  </div>
 </ion-content>
