@@ -1,41 +1,42 @@
-#container {
+.welcome-message {
   text-align: center;
+  margin-top: 50px;
+  color: black;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-
-ion-header {
-  background-color: #3880ff; // Primary color for header
-}
-
-h2 {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 1.8rem;
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    opacity: 0.8;
+  }
 }
 
 ion-button {
   margin-top: 20px;
+  font-size: 1.1rem;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+ion-button {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: #ff4081;
+  }
 }

@@ -1,17 +1,55 @@
-ion-header {
-    background-color: #3880ff; // Primary color for header
+.weather-info {
+    margin-top: 20px;
   }
   
   ion-card {
-    margin: 20px;
-    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
   }
   
   ion-card-header {
-    text-align: center;
+    background-color: #3880ff;
+    color: white;
+  }
+  
+  ion-card-title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  ion-card-subtitle {
+    font-size: 1.2rem;
+    margin-top: 5px;
+  }
+  
+  ion-card-content {
+    padding: 20px;
+    font-size: 1.1rem;
   }
   
   ion-button {
     margin-top: 20px;
+  }
+  
+  ion-item {
+    margin-top: 10px;
+  }
+  
+  ion-input {
+    font-size: 1.1rem;
+  }
+
+  ion-button {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+  
+    &:hover {
+      transform: scale(1.05);
+      background-color: #ff4081;
+    }
   }
   

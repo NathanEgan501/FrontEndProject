@@ -12,6 +12,8 @@
   <ion-button expand="full" (click)="getWeather()">Search City</ion-button>
   <ion-button expand="full" color="medium" (click)="getWeatherByLocation()">Use My Location</ion-button>
 
+  <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+
   <div *ngIf="weatherData" class="weather-info">
     <ion-card>
       <ion-card-header>
@@ -23,6 +25,11 @@
         <p>Humidity: {{ weatherData.main.humidity }}%</p>
       </ion-card-content>
     </ion-card>
-    <ion-button expand="full" color="tertiary" routerLink="/home">Back</ion-button>
   </div>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="full" color="tertiary" routerLink="/home">Back</ion-button>
+  </ion-toolbar>
+</ion-footer>
