@@ -5,15 +5,22 @@
 </ion-header>
 
 <ion-content class="ion-padding">
+  <!-- Input field for user to type a city name -->
   <ion-item>
     <ion-label position="floating">Enter City</ion-label>
     <ion-input [(ngModel)]="city" type="text"></ion-input>
   </ion-item>
+
+  <!-- Button for weather search using the entered city -->
   <ion-button expand="full" (click)="getWeather()">Search City</ion-button>
+
+  <!-- Button for weather search using the user's current location -->
   <ion-button expand="full" color="medium" (click)="getWeatherByLocation()">Use My Location</ion-button>
 
+  <!-- Loading spinner -->
   <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
 
+  <!-- Display weather info if data is available -->
   <div *ngIf="weatherData" class="weather-info">
     <ion-card>
       <ion-card-header>
@@ -28,6 +35,7 @@
   </div>
 </ion-content>
 
+<!-- Back button fixed in the footer to return to home page -->
 <ion-footer>
   <ion-toolbar>
     <ion-button expand="full" color="tertiary" routerLink="/home">Back</ion-button>
